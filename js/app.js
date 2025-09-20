@@ -1,5 +1,6 @@
 let amigos = [];
 let amigosSorteados = false;
+let amigoInformado;
 
 function adicionar() {
     if (amigosSorteados) {
@@ -15,12 +16,19 @@ function adicionar() {
         return;
     }
 
-    amigos.push(amigo.value);
+    amigoInformado = amigo.value.toUpperCase();
+
+    if (amigos.includes(amigoInformado)) {
+        alert('Amigo já adicionado!');
+        return;
+    }
+
+    amigos.push(amigoInformado);
 
     if (lista.textContent == '') {
-        lista.textContent = amigo.value;
+        lista.textContent = amigoInformado;
     } else {
-        lista.textContent = lista.textContent + ', ' + amigo.value;
+        lista.textContent = lista.textContent + ', ' + amigoInformado;
     }
 
     amigo.value = '';
