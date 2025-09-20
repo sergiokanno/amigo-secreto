@@ -1,6 +1,12 @@
 let amigos = [];
+let amigosSorteados = false;
 
 function adicionar() {
+    if (amigosSorteados) {
+        document.getElementById('lista-sorteio').innerHTML = '';
+        amigosSorteados = false;
+    }
+
     let amigo = document.getElementById('nome-amigo');
     let lista = document.getElementById('lista-amigos');
 
@@ -39,10 +45,13 @@ function sortear() {
             sorteio.innerHTML = sorteio.innerHTML + amigos[i] +' --> ' +amigos[i + 1] + '<br/>';
         }
     }
+
+    amigosSorteados = true;
 }
 
 function reiniciar() {
     amigos = [];
+    amigosSorteados = false;
     document.getElementById('lista-amigos').innerHTML = '';
     document.getElementById('lista-sorteio').innerHTML = '';
 }
