@@ -47,6 +47,16 @@ function embaralha(lista) {
 }
 
 function sortear() {
+    if (amigos.length == 0) {
+        alert('Adicione amigos para sortear!');
+        return;
+    }
+
+    if (amigos.length < 4) {
+        alert('Adicione mais amigos para sortear!');
+        return;
+    }
+
     embaralha(amigos);
 
     let sorteio = document.getElementById('lista-sorteio');
