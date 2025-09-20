@@ -10,6 +10,11 @@ function adicionar() {
     let amigo = document.getElementById('nome-amigo');
     let lista = document.getElementById('lista-amigos');
 
+    if (amigo.value == '') {
+        alert('Informe o nome do amigo!');
+        return;
+    }
+
     amigos.push(amigo.value);
 
     if (lista.textContent == '') {
