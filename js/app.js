@@ -57,6 +57,11 @@ function sortear() {
         return;
     }
 
+    if (amigosSorteados) {
+        alert('Sorteio já realizado! Reinicie para sortear novamente.');
+        return;
+    }
+
     embaralha(amigos);
 
     let sorteio = document.getElementById('lista-sorteio');
